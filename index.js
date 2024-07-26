@@ -1,159 +1,224 @@
-alert("Bienvenido al proyecto de Ignacio")
+alert("Bienvenido al proyecto de Ignacio Brizuela")
+//Arrays
+//Arrays de ingresos
+const salarios = []
+const inversiones = []
+const emprendimientos = []
+//Arrays de egresos
+const facturas = []
+const creditos = []
 
-const modalidad = parseInt(prompt("Este proyecto te ofrece la posibilidad de utilizar dos modalidades. Para utilizar el modo de Finanzas Personales, escribe el numero 1. Si quieres utilizar el modo de Analisis y Trade de Criptoactivos, escribe el numero 2"))
-
-if (modalidad==1){
-    alert("Bienvenido a la modalidad de Finanzas Personales")
-    console.log("Bienvenido a la modalidad de Finanzas Personales")
-    //Array
-    let ingresos = [] 
-    let gastos = []
-    //Variables
-    let ingreso = 0
-    let gasto = 0
-
-    const preguntaIngresos = confirm("¿Tenes varias fuentes de ingresos?")
-
-    if (preguntaIngresos==true){
-        const cantidadIngresos = parseInt(prompt("¿Cuantas fuentes de ingresos tiene?"))
-        for(let i=0;i<cantidadIngresos;i++){
-            ingreso = parseInt(prompt("Indique el monto del ingreso"))
-            ingresos.push(ingreso)
-            let tipoIngreso = prompt("Considerando que estamos analizando las siguientes partidas ¿A que tipo de ingreso corresponde el recien ingresado?: \n 1- Salario \n 2- Inversiones \n 3- Emprendimiento")
-            switch (tipoIngreso){
-                case "salario":
-                    alert("El monto ingresado corresponde a "+tipoIngreso)
-                    break
-                case "emprendimiento":
-                    alert("El monto ingresado corresponde a "+tipoIngreso)
-                    break
-                case "inversiones":
-                    alert("El monto ingresado corresponde a "+tipoIngreso)
-                    break
-                default:
-                    alert("El tipo de ingreso mencionado no corresponde a una partida analizable aqui")
-            }
+//Funciones
+const inicio = () => {
+    let menu = parseInt(prompt("1- Ingresos \n2- Egresos \n3- Salir"))
+    while(menu<3){
+        switch(menu){
+            case 1:
+                cargaIngresos()
+                break
+            case 2: 
+                cargaEgresos()
+                break
+            default:
+                break
         }
-        console.log(ingresos)
-    }else{
-        salario = parseInt(prompt("Ingresa aqui la cantidad de dinero que percibis mensualmente"))
+        menu = parseInt(prompt("1- Ingresos \n2- Egresos \n3- Salir"))
+    }
+}
+//Registro de ingresos
+const cargaIngresos = () =>{
+    let menu2 = parseInt(prompt("1- Carga tus salarios \n2- Carga tus inversiones \n3- Carga tus emprendimientos \n4- Ver dinero total ingresado en concepto de salarios \n5- Ver resultado final en concepto de inversiones \n6- Ver balance total de los emprendimientos \n7- Volver"))
+    while(menu2<8){
+        switch(menu2){
+            case 1:
+                crearSalario()
+                break
+            case 2:
+                crearInversion()
+                break
+            case 3:
+                crearEmprendimiento()
+                break
+            case 4:
+                verSalarios()
+                break
+            case 5:
+                verInversiones()
+                break
+            case 6:
+                verEmprendimientos()
+                break
+            case 7:
+                inicio()
+                break
+            default:
+                alert("Opcion incorrecta")
+                break
+        }
+        menu2 = parseInt(prompt("1- Carga tus salarios \n2- Carga tus inversiones \n3- Carga tus emprendimientos \n4- Ver dinero total ingresado en concepto de salarios \n5- Ver resultado final en concepto de inversiones \n6- Ver balance total de los emprendimientos \n7- Volver"))
+    }
+}
+//Registro de egresos
+const cargaEgresos = () =>{
+    let menu3 = parseInt(prompt("1- Carga tus facturas \n2- Carga tus deudas crediticias \n3- Ver el monto total a abonar de las facturas. \n4- Ver el monto total a abonar de deudas crediticias \n5- Volver."))
+    while(menu3<6){
+        switch(menu3){
+            case 1: 
+                crearFactura()
+                break
+            case 2:
+                crearCredito()
+                break
+            case 3:
+                verFacturas()
+                break
+            case 4:
+                verCreditos()
+                break
+            case 5:
+                inicio()
+                break
+            default:
+                alert("Opcion incorrecta")
+                break
+        }
+        menu3 = parseInt(prompt("1- Carga tus facturas \n2- Carga tus deudas crediticias \n3- Ver el monto total a abonar de las facturas. \n4- Ver el monto total a abonar de deudas crediticias \n5- Volver."))
+    }
+}
+//Funciones de los ingresos
+const crearSalario = () =>{
+    let cargaMonto = parseFloat(prompt("¿Cual es el monto?"))
+    let cargaMoneda = prompt("¿En que moneda?")
+    let cargaMesLiquidado = prompt("¿A que mes corresponde esta liquidacion?")
 
-        ingresosTotales=salario
+    const salario = new Salario (cargaMonto, cargaMoneda, cargaMesLiquidado)
+    salarios.push(salario)
+}
+const verSalarios = () =>{
+    if (salarios.length === 0){
+        alert("Aun no hay recibos de sueldo cargados")
+    }else {
+        console.log(salarios)
+        console.log("El monto total ingresado en concepto de salarios es de $ "+salarios.reduce((contador, salario) => contador + salario.monto, 0))
+    }
+}
+const crearInversion = () =>{
+    let cargaMonto = parseFloat(prompt("¿Cuanto fue el capital invertido?"))
+    let cargaMoneda = prompt("¿En que moneda? (ars o usd)")
+    let cargaPorcentaje = parseFloat(prompt("¿Que porcentaje vario la inversion?"))
+    let cargaResultadoNeto = () => (cargaPorcentaje*cargaMonto)/100
 
-        alert("Tus ingresos totales son de $"+ingresosTotales)
-        console.log("Tus ingresos totales son de $"+ingresosTotales)
+    const inversion = new Inversion (cargaMonto, cargaMoneda, cargaPorcentaje, cargaResultadoNeto())
+    inversiones.push(inversion)
+}
+const verInversiones = () =>{
+    if (inversiones.length === 0){
+        alert("Aun no hay inversiones cargadas")
+    }else {
+        console.log(inversiones)
+        console.log("El resultado neto en concepto de inversiones es de $ "+inversiones.reduce((contador, inversion) => contador + inversion.resultadoNeto, 0))
     }
-    
-}else if (modalidad==2){
-    alert("Bienvenido a la modalidad de Analisis y Trade de Criptoactivos")
-    console.log("Bienvenido a la modalidad de Analisis y Trade de Criptoactivos")
-    //Variables
-    let precio = 0
-    let precioBtc = 70000
-    let precioEth = 3800
-    let precioSol = 160
-    let accion = 0
-    //array
-    let criptomonedas = []
-    //Funcion
-    function añadirCripto(){
-        criptomonedas.push(cripto)
-    }
-    function variacionPorcentual(precioInicial, cantidadVariacion){
-        let vPorcentual=(cantidadVariacion*100)/precioInicial;
-        return vPorcentual;
-    }
-    function variacionCash(precioInicial, porcentajeVariacion){
-        let vCash=(porcentajeVariacion*precioInicial)/100;
-        return vCash;
-    }
+}
+const crearEmprendimiento = () =>{
+    let cargaActividad = prompt("¿En que rubro emprendes?")
+    let cargaResultadoNeto = parseFloat(prompt("¿Cual fue el balance mensual?(Ejemplo: 300000 (ganancia) | -300000 (perdida))"))
 
-    alert("Actualmente contamos con tres criptomonedas para analizar. Elegi una: \n 1- Bitcoin \n 2- Ethereum \n 3- Solana")
-    console.log("Actualmente contamos con tres criptomonedas para analizar. Elegi una: \n 1- Bitcoin \n 2- Ethereum \n 3- Solana")
-    let cripto = prompt("¿Que criptomoneda te gustaria analizar?")
-    switch(cripto){
-        case "bitcoin":
-            precio = precioBtc
-            alert("El precio actual de "+cripto+" es de U$D "+precioBtc)
-            añadirCripto()
-            alert("Ahora que seleccionaste la criptomoneda "+cripto+" podes determinar su variacion porcentual, o su variacion en cash respecto al movimiento del precio en el mercado")
-            console.log("Ahora que seleccionaste la criptomoneda "+cripto+" podes determinar su variacion porcentual, o su variacion en cash respecto al movimiento del precio en el mercado")
-            accion = parseInt(prompt("Elegi que tipo de accion queres ejecutar: \n 1- Calcular su variacion porcentual del precio \n 2- Calcular la variacion en cash del precio respecto a su porcentaje de variacion"))
-            switch(accion){
-                case 1:
-                    let vCantidad=parseInt(prompt("¿De cuanto fue la variacion en el precio del activo en terminos de cash? Ejemplo: El activo aumento U$S5.000"));
-                    let porcentaje = variacionPorcentual(precio, vCantidad)
-                    alert("El precio de Bitcoin vario "+porcentaje+" %")
-                    console.log("El precio de Bitcoin vario "+porcentaje+" %")
-                    break
-                case 2:
-                    let vPorcentaje=parseInt(prompt("¿De cuanto fue la variacion porcentual del precio del activo?"))
-                    let cash=variacionCash(precio, vPorcentaje)
-                    alert("El precio de Bitcoin vario "+cash+" U$D")
-                    console.log("El precio de Bitcoin vario "+cash+" U$D")
-                    break
-                default:
-                    alert("Esta accion no es valida")
-                    console.log("Esta accion no es valida")
-            }
-            break
-        case "ethereum":
-            precio = precioEth
-            alert("El precio actual de "+cripto+" es de U$D "+precioEth)
-            añadirCripto()
-            alert("Ahora que seleccionaste la criptomoneda "+cripto+" podes determinar su variacion porcentual, o su variacion en cash respecto al movimiento del precio en el mercado")
-            console.log("Ahora que seleccionaste la criptomoneda "+cripto+" podes determinar su variacion porcentual, o su variacion en cash respecto al movimiento del precio en el mercado")
-            accion = parseInt(prompt("Elegi que tipo de accion queres ejecutar: \n 1- Calcular su variacion porcentual del precio \n 2- Calcular la variacion en cash del precio respecto a su porcentaje de variacion"))
-            switch(accion){
-                case 1:
-                    let vCantidad=parseInt(prompt("¿De cuanto fue la variacion en el precio del activo en terminos de cash? Ejemplo: El activo aumento U$S5.000"));
-                    let porcentaje = variacionPorcentual(precio, vCantidad)
-                    alert("El precio de Ethereum vario "+porcentaje+" %")
-                    console.log("El precio de Ethereum vario "+porcentaje+" %")
-                    break
-                case 2:
-                    let vPorcentaje=parseInt(prompt("¿De cuanto fue la variacion porcentual del precio del activo?"))
-                    let cash=variacionCash(precio, vPorcentaje)
-                    alert("El precio de Ethereum vario "+cash+" U$D")
-                    console.log("El precio de Ethereum vario "+cash+" U$D")
-                    break
-                default:
-                    alert("Esta accion no es valida")
-                    console.log("Esta accion no es valida")
-            }
-            break
-        case "solana":
-            precio = precioSol
-            alert("El precio actual de "+cripto+" es de U$D "+precioSol)
-            añadirCripto()
-            alert("Ahora que seleccionaste la criptomoneda "+cripto+" podes determinar su variacion porcentual, o su variacion en cash respecto al movimiento del precio en el mercado")
-            console.log("Ahora que seleccionaste la criptomoneda "+cripto+" podes determinar su variacion porcentual, o su variacion en cash respecto al movimiento del precio en el mercado")
-            accion = parseInt(prompt("Elegi que tipo de accion queres ejecutar: \n 1- Calcular su variacion porcentual del precio \n 2- Calcular la variacion en cash del precio respecto a su porcentaje de variacion"))
-            switch(accion){
-                case 1:
-                    let vCantidad=parseInt(prompt("¿De cuanto fue la variacion en el precio del activo en terminos de cash? Ejemplo: El activo aumento U$S5.000"));
-                    let porcentaje = variacionPorcentual(precio, vCantidad)
-                    alert("El precio de Solana vario "+porcentaje+" %")
-                    console.log("El precio de Solana vario "+porcentaje+" %")
-                    break
-                case 2:
-                    let vPorcentaje=parseInt(prompt("¿De cuanto fue la variacion porcentual del precio del activo?"))
-                    let cash=variacionCash(precio, vPorcentaje)
-                    alert("El precio de Solana vario "+cash+" U$D")
-                    console.log("El precio de Solana vario "+cash+" U$D")
-                    break
-                default:
-                    alert("Esta accion no es valida")
-                    console.log("Esta accion no es valida")
-            }
-            break
-        default:
-            alert("Esa criptomoneda no se encuentra actuallmente en este proyecto")
+    const emprendimiento = new Emprendimiento (cargaActividad, cargaResultadoNeto)
+    emprendimientos.push(emprendimiento)
+}
+const verEmprendimientos = () =>{
+    if (emprendimientos.length === 0){
+        alert("Aun no hay facturas cargadas")
+    }else {
+        console.log(emprendimientos)
+        console.log("El balance mensual total en concepto de emprendimientos es de $ "+emprendimientos.reduce((contador, emprendimiento) => contador + emprendimiento.resultadoNeto, 0))
     }
-    console.log("Espero que te haya servido el analisis sobre "+criptomonedas)
-    alert("Espero que te haya servido el analisis sobre "+criptomonedas)
-}else {
-    alert("La opcion seleccionada no corresponde a este proyecto")
-    console.log("La opcion seleccionada no corresponde a este proyecto")
+}
+//Funciones de los egresos
+const crearFactura = () =>{
+    let cargarServicio = prompt("¿A que servicio corresponde esta factura?")
+    let cargarMonto = parseFloat(prompt("¿Cual es el monto a abonar?"))
+    let cargarVencimiento = prompt("¿En que fecha vence la factura? (DD/MM/AA)")
+
+    const factura = new Factura (cargarServicio, cargarMonto, cargarVencimiento)
+    facturas.push(factura)
+    alert("La factura ha sido correctamente cargada")
+}
+const verFacturas = () =>{
+    if (facturas.length === 0){
+        alert("Aun no hay facturas cargadas")
+    }else {
+        console.log(facturas)
+        console.log("El total de las facturas ingresadas es de $ "+facturas.reduce((contador, factura) => contador + factura.monto, 0))
+    }
+}
+/*const totalFacturas = () => {
+    let total = facturas.reduce((contador, factura) => contador + factura.monto, 0)
+    return total
+}*/
+const crearCredito = () =>{
+    let cargarMonto = parseFloat(prompt("¿De cuanto es la deuda?"))
+    let cargarEntidad = prompt("¿A que entidad se le debe pagar?")
+    let cargarVencimiento = prompt("¿En que fecha vence la deuda? (DD/MM/AA)")
+
+    const credito = new Credito (cargarMonto, cargarEntidad, cargarVencimiento)
+    creditos.push(credito)
+}
+const verCreditos = () =>{
+    if (creditos.length === 0){
+        alert("Aun no hay deudas crediticias cargadas")
+    }else {
+        console.log(creditos)
+        console.log("El total de las deudas crediticias es de $ "+creditos.reduce((contador, credito) => contador + credito.monto, 0))
+    }
 }
 
+//Clases para objetos
+class Salario{
+    static id = 0
+    constructor(monto, moneda, mesLiquidado){
+        this.id = ++Salario.id,
+        this.monto = monto,
+        this.moneda = moneda,
+        this.mesLiquidado = mesLiquidado
+    }
+}
+class Inversion{
+    static id = 0
+    constructor (montoInvertido, moneda, porcentaje, resultadoNeto){
+        this.id = ++Inversion.id,
+        this.montoInvertido = montoInvertido,
+        this.moneda = moneda,
+        this.porcentaje = porcentaje,
+        this.resultadoNeto = resultadoNeto
+    }
+}
+class Emprendimiento{
+    static id = 0
+    constructor (actividad, resultadoNeto){
+        this.id = ++Emprendimiento.id,
+        this.actividad = actividad,
+        this.resultadoNeto = resultadoNeto
+    }
+}
+class Factura {
+    static id = 0
+    constructor(servicio, monto, vencimiento){
+        this.id = ++Factura.id
+        this.servicio = servicio,
+        this.monto = monto,
+        this.vencimiento = vencimiento
+    }
+}
+class Credito {
+    static id = 0
+    constructor(monto, entidad, vencimiento){
+        this.id = ++Credito.id,
+        this.monto = monto,
+        this.entidad = entidad,
+        this.vencimiento = vencimiento
+    }
+}
+
+//Inicio de ejecucion
+inicio()
