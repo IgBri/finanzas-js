@@ -1,0 +1,216 @@
+html {
+    font-family: "finanzas";
+    body {
+        margin-right: 5%;
+        margin-left: 5%;
+        background-color: beige;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+        header {
+            //propiedades a reemplazar por extend
+            border: 3px outset gray;
+            border-radius: 15px;
+            overflow: hidden;
+            //
+            width: 100%;
+            div {
+                display: flex;
+                justify-content: center;
+                h1 {
+                    border: 4px outset black;
+                    padding: 10px;
+                }
+            }
+        }
+        main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            #menu1 {
+                width: auto;
+                height: 200px;
+                display: none;
+                flex-direction: row;
+                justify-content: space-evenly;
+                padding: 2%;
+                gap: 15px;
+                border: 2px solid black;
+                div {
+                    height: 100%;
+                    width: 100%;
+                    .caratula {
+                        display: flex;
+                        height: 100%;
+                        width: auto;
+                        align-items: flex-end;
+                        .boton {
+                            height: 20%;
+                            width: 100%;
+                            border-radius: 15px 0px;
+                            border: 2px solid black;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            a {
+                                text-decoration: none;
+                                color: black;
+                                letter-spacing: 2px;
+                                font-family: "finanzas";
+                            }
+                        }
+                    }
+                }
+            }
+            #menu2 {
+                //propiedades a reemplazar por extend
+                border: 3px outset gray;
+                border-radius: 15px;
+                overflow: hidden;
+                //
+                .accordion{
+                    font-family: "finanzas";
+                    .accordion-item{
+                        .accordion-collapse {
+                            //padding a reemplazar por extend
+                            padding: 2%;
+                            .accordion-body {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-evenly;
+                                gap: 10px;
+                                div {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 10px;
+                                    justify-content: space-between;
+                                    .contenedor-registro-informacion {
+                                        justify-content: space-between;
+                                        height: 100%;
+                                        label {
+                                            text-align: center;
+                                        }
+                                        input {
+                                            width: 100%;
+                                            align-self: center;
+                                        }
+                                    }
+                                }
+                            }
+                            div {
+                                display: flex;
+                                justify-content: center;
+                                #botonAgregarSalario {
+                                    width: 50%;
+                                }
+                                #botonAgregarInversion {
+                                    width: 50%;
+                                }
+                                #botonAgregarEmprendimiento {
+                                    width: 50%;
+                                }
+                            }
+                            .resultadosSalarios {
+                                display: flex;
+                                flex-direction: column;
+                                padding: 2%;
+                                .lineaFija {
+                                    width: 100%;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-evenly;
+                                    div {
+                                        width: 100%;
+                                    }
+                                }
+                                #datosCargadosSalario {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    .lineaResultado {
+                                        width: 100%;
+                                        justify-content: space-evenly;
+                                        span {
+                                            width: 100%;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                                .montoFinal {
+                                    justify-content:center;
+                                }
+                            }
+                            #resultadosEmprendimientos {
+                                flex-direction: column;
+                                justify-content: space-evenly;
+                                .lineaFija {
+                                    div {
+                                        width: 100%;
+                                    }
+                                }
+                                #datosCargados {
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    .lineaResultado {
+                                        width: 100%;
+                                        span {
+                                            width: 100%;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                            #resultadosInversiones {
+                                flex-direction: column;
+                                justify-content: space-evenly;
+                                .lineaFija {
+                                    width: 100%;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-evenly;
+                                }
+                                #datosCargadosInversiones {
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    .lineaResultado {
+                                        width: 100%;
+                                        span {
+                                            width: 100%;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /*display: flex;
+                flex-direction: column;
+                gap: 10px;
+                border: 2px solid black;
+                padding: 2%;
+                .verRegistros {
+                    border: 2px outset black;
+                    height: 150px;
+                    border-radius: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    h3 {
+                        
+                        display: inline-flex;
+                        justify-content: flex-start;
+                        position: relative;
+                        left: 5px;
+                    }
+                    .informacionRegistrada {
+
+                    }
+                }*/
+            }
+        }
+    }
+}

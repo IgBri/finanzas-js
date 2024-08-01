@@ -206,6 +206,69 @@ html body main #menu2 .accordion .accordion-item .accordion-collapse #resultados
   text-align: center;
 }
 
+html {
+  font-family: "finanzas";
+}
+html body {
+  margin-right: 5%;
+  margin-left: 5%;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+html body header {
+  border: 3px outset gray;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+}
+html body header div {
+  display: flex;
+  justify-content: center;
+  padding: 4%;
+}
+html body header div h1 {
+  border: 4px outset black;
+  padding: 10px;
+}
+html body main .menu-principal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 10%;
+  padding: 2%;
+}
+html body main .menu-principal section {
+  width: 100%;
+  border: 3px outset gray;
+  border-radius: 15px;
+}
+html body main .menu-principal section .contenedor {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+html body main .menu-principal section .contenedor button {
+  height: 50px;
+  margin: 4%;
+}
+html body main .menu-principal section .contenedor button a {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  font-family: "finanzas";
+}
+html body main .menu-principal #menu-ingreso {
+  background-image: url(./../../assets/imagenes/ingresos.jpg);
+  background-size: contain;
+}
+html body main .menu-principal #menu-egreso {
+  background-image: url(./../../assets/imagenes/gastos.jpg);
+  background-size: contain;
+}
+
 * {
   margin: 0;
   padding: 0;
