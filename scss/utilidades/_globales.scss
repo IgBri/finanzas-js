@@ -5,5 +5,15 @@
 }
 @font-face {
     font-family: "finanzas";
-    src: url(../../assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+    src: url(../../assets/fonts/Gruppo/Gruppo-Regular.ttf)
+}
+
+html {
+    font-family: "finanzas";
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-image: url(./../../assets/imagenes/fondo-textura.jpg);
+    }
 }

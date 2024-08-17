@@ -1,64 +1,218 @@
-html {
-    font-family: "finanzas";
-    body {
-        margin-right: 5%;
-        margin-left: 5%;
-        background-color: beige;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        height: 100%;
-        header {
-            //propiedades a reemplazar por extend
-            border: 3px outset gray;
+main {
+    //background-color: rgb(117, 117, 177);
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "registracion registracion registrados";
+    gap: 25px;
+    .registracion {
+        grid-area: registracion;
+        .menu {
+            margin-right: 5%;
+            margin-bottom: 2%;
+            margin-left: 5%;
+            margin-top: 2%;
+            border: 4px inset gray;
             border-radius: 15px;
             overflow: hidden;
-            //
-            width: 100%;
-            div {
-                display: flex;
-                justify-content: center;
-                padding: 4%;
-                h1 {
-                    border: 4px outset black;
-                    padding: 10px;
-                }
-            }
-        }
-        main {
-            .menu-principal {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                gap: 10%;
-                padding: 2%;
-                section {
-                    width: 100%;
-                    border: 3px outset gray;
-                    border-radius: 15px;
-                    .contenedor {
-                        height: 300px;
-                        display: flex;
-                        flex-direction: column;
-                        button {
-                            height: 50px;
-                            margin: 4%;
-                            a {
-                                font-size: 18px;
-                                color: black;
-                                text-decoration: none;
-                                font-family: "finanzas";
+            .accordion {
+                font-family: "finanzas";
+                --bs-accordion-active-bg: whitesmoke;
+                .accordion-item {
+                    .accordion-header {
+                        .accordion-button {
+                            font-weight: bolder;
+                            letter-spacing: 3px;
+                        }
+                    }
+
+                    .accordion-collapse {
+                        .accordion-body {
+                            display: flex;
+                            flex-direction: row;
+                            width: 100%;
+                            justify-content: space-evenly;
+
+                            div {
+                                display: flex;
+                                flex-direction: column;
+
+                                .contenedor-registro-informacion {
+                                    text-align: center;
+                                    font-weight: bolder;
+                                    input {
+                                        letter-spacing: 1px;
+                                        font-weight: 600;
+                                        color: black;
+                                    }
+                                }
+                            }
+                        }
+                        div {
+                            display: flex;
+                            justify-content: center;
+                            button {
+                                width: 50%;
+                                font-weight: bolder;
+                            }
+                        }
+                        .resultados {
+                            flex-direction: column;
+                            font-weight: bolder;
+                            .lineaFija {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-evenly;
+                                width: 100%;
+                                div {
+                                    width: 100%;
+                                    span {
+                                        width: 100%;
+                                        text-align: center;
+                                        letter-spacing: 1px;
+                                        font-weight: bolder;
+                                        color: black;
+                                    }
+                                }
+                            }
+                            #datosCargadosSalario {
+                                flex-direction: column;
+                                .lineaResultado {
+                                    justify-content: space-evenly;
+                                    span {
+                                        width: 100%;
+                                        text-align: center;
+                                        letter-spacing: 1px;
+                                        font-weight: 600;
+                                        color: black;
+                                    }
+                                }
+                            }
+
+                            #datosCargadosInversiones {
+                                flex-direction: column;
+
+                                .lineaResultado {
+                                    justify-content: space-evenly;
+                                    span {
+                                        width: 100%;
+                                        text-align: center;
+                                        letter-spacing: 1px;
+                                        font-weight: 600;
+                                        color: black;
+                                    }
+                                }
+                            }
+
+                            #datosCargadosEmprendimientos {
+                                flex-direction: column;
+                                .lineaResultado {
+                                    justify-content: space-evenly;
+                                    span {
+                                        width: 100%;
+                                        text-align: center;
+                                        letter-spacing: 1px;
+                                        font-weight: 600;
+                                        color: black;
+                                    }
+                                }
+                            }
+                            #datosCargadosFactura {
+                                flex-direction: column;
+                                .lineaResultado {
+                                    justify-content: space-evenly;
+                                    span {
+                                        width: 100%;
+                                        text-align: center;
+                                        letter-spacing: 1px;
+                                        font-weight: 600;
+                                        color: black;
+                                    }
+                                }
+                            }
+                            #datosCargadosCreditos {
+                                flex-direction: column;
+                                .lineaResultado {
+                                    justify-content: space-evenly;
+                                    span {
+                                        width: 100%;
+                                        text-align: center;
+                                        letter-spacing: 1px;
+                                        font-weight: 600;
+                                        color: black;
+                                    }
+                                }
                             }
                         }
                     }
                 }
-                #menu-ingreso{
-                    background-image: url(./../../assets/imagenes/ingresos.jpg);
-                    background-size: contain;
+            }
+        }
+    }
+    .registrados {
+        grid-area: registrados;
+        display: flex;
+        flex-direction: column;
+        .ingresos, .egresos {
+            font-family: "finanzas";
+            margin-right: 5%;
+            margin-bottom: 2%;
+            margin-left: 5%;
+            margin-top: 2%;
+            border: 4px inset gray;
+            border-radius: 15px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            .movimiento {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: auto;
+                backdrop-filter: blur(5px);
+                border-bottom: 4px inset gray;
+                span {
+                    font-size: 20px;
+                    font-weight: bolder;
+                    letter-spacing: 4px;
+                    color: whitesmoke;
+                    text-align: center;
+                    width: 100%;
                 }
-                #menu-egreso{
-                    background-image: url(./../../assets/imagenes/gastos.jpg);
-                    background-size: contain;
+            }
+            .total {
+                height: auto;
+                background-color: whitesmoke;
+                div {
+                    color: black;
+                    font-size: 30px;
+                    text-align: center;
+                    font-weight: bolder;
+                    letter-spacing: 1px;
+                    height: 100%;
+                }
+            }
+            .boton {
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 65px;
+                background-color: whitesmoke;
+                .boton-guardar {
+                    font-size: 20px;
+                    font-weight: bolder;
+                    letter-spacing: 4px;
+                    color: black;
+                    border-radius: 15px;
+                    height: 50%;
+                    width: 80%;
+                    box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.75);
                 }
             }
         }

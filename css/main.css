@@ -1,272 +1,345 @@
-html {
-  font-family: "finanzas";
-}
-html body {
-  margin-right: 5%;
-  margin-left: 5%;
+body {
   background-color: beige;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
 }
-html body header {
-  border: 3px outset gray;
-  border-radius: 15px;
-  overflow: hidden;
-  width: 100%;
+body header {
+  border-bottom: 4px outset rgb(255, 255, 255);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 9px 10px 0px rgba(0, 0, 0, 0.75);
 }
-html body header div {
+body header .logo {
   display: flex;
   justify-content: center;
-}
-html body header div h1 {
-  border: 4px outset black;
-  padding: 10px;
-}
-html body main {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-html body main #menu1 {
-  width: auto;
-  height: 200px;
-  display: none;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 2%;
-  gap: 15px;
-  border: 2px solid black;
-}
-html body main #menu1 div {
   height: 100%;
   width: 100%;
 }
-html body main #menu1 div .caratula {
+body header .logo h1 {
+  margin: 2%;
   display: flex;
-  height: 100%;
-  width: auto;
-  align-items: flex-end;
-}
-html body main #menu1 div .caratula .boton {
-  height: 20%;
-  width: 100%;
-  border-radius: 15px 0px;
-  border: 2px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-html body main #menu1 div .caratula .boton a {
-  text-decoration: none;
-  color: black;
-  letter-spacing: 2px;
-  font-family: "finanzas";
-}
-html body main #menu2 {
-  border: 3px outset gray;
-  border-radius: 15px;
-  overflow: hidden;
-  /*display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: 2px solid black;
-  padding: 2%;
-  .verRegistros {
-      border: 2px outset black;
-      height: 150px;
-      border-radius: 15px;
-      display: flex;
-      flex-direction: column;
-      h3 {
-
-          display: inline-flex;
-          justify-content: flex-start;
-          position: relative;
-          left: 5px;
-      }
-      .informacionRegistrada {
-
-      }
-  }*/
-}
-html body main #menu2 .accordion {
-  font-family: "finanzas";
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse {
-  padding: 2%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .accordion-body {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 10px;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .accordion-body div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: space-between;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .accordion-body div .contenedor-registro-informacion {
-  justify-content: space-between;
-  height: 100%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .accordion-body div .contenedor-registro-informacion label {
-  text-align: center;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .accordion-body div .contenedor-registro-informacion input {
-  width: 100%;
-  align-self: center;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse div {
-  display: flex;
-  justify-content: center;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse div #botonAgregarSalario {
-  width: 50%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse div #botonAgregarInversion {
-  width: 50%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse div #botonAgregarEmprendimiento {
-  width: 50%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .resultadosSalarios {
-  display: flex;
-  flex-direction: column;
-  padding: 2%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .resultadosSalarios .lineaFija {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .resultadosSalarios .lineaFija div {
-  width: 100%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .resultadosSalarios #datosCargadosSalario {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .resultadosSalarios #datosCargadosSalario .lineaResultado {
-  width: 100%;
-  justify-content: space-evenly;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .resultadosSalarios #datosCargadosSalario .lineaResultado span {
-  width: 100%;
-  text-align: center;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse .resultadosSalarios .montoFinal {
-  justify-content: center;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosEmprendimientos {
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosEmprendimientos .lineaFija div {
-  width: 100%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosEmprendimientos #datosCargados {
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosEmprendimientos #datosCargados .lineaResultado {
-  width: 100%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosEmprendimientos #datosCargados .lineaResultado span {
-  width: 100%;
-  text-align: center;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosInversiones {
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosInversiones .lineaFija {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosInversiones #datosCargadosInversiones {
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosInversiones #datosCargadosInversiones .lineaResultado {
-  width: 100%;
-}
-html body main #menu2 .accordion .accordion-item .accordion-collapse #resultadosInversiones #datosCargadosInversiones .lineaResultado span {
-  width: 100%;
-  text-align: center;
-}
-
-html {
-  font-family: "finanzas";
-}
-html body {
-  margin-right: 5%;
-  margin-left: 5%;
-  background-color: beige;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
-}
-html body header {
-  border: 3px outset gray;
-  border-radius: 15px;
-  overflow: hidden;
-  width: 100%;
-}
-html body header div {
-  display: flex;
-  justify-content: center;
-  padding: 4%;
-}
-html body header div h1 {
-  border: 4px outset black;
-  padding: 10px;
-}
-html body main .menu-principal {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 10%;
-  padding: 2%;
-}
-html body main .menu-principal section {
-  width: 100%;
-  border: 3px outset gray;
-  border-radius: 15px;
-}
-html body main .menu-principal section .contenedor {
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-}
-html body main .menu-principal section .contenedor button {
   height: 50px;
-  margin: 4%;
 }
-html body main .menu-principal section .contenedor button a {
+body header .logo h1 span {
+  color: beige;
+  border: 4px inset gray;
+  border-radius: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  height: auto;
+  font-family: "finanzas";
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+body header .enlaces {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body header .enlaces div a {
+  font-family: "finanzas";
+  font-weight: bolder;
   font-size: 18px;
   color: black;
   text-decoration: none;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "registracion registracion registrados";
+  gap: 25px;
+}
+main .registracion {
+  grid-area: registracion;
+}
+main .registracion .menu {
+  margin-right: 5%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  margin-top: 2%;
+  border: 4px inset gray;
+  border-radius: 15px;
+  overflow: hidden;
+}
+main .registracion .menu .accordion {
   font-family: "finanzas";
+  --bs-accordion-active-bg: whitesmoke;
 }
-html body main .menu-principal #menu-ingreso {
-  background-image: url(./../../assets/imagenes/ingresos.jpg);
-  background-size: contain;
+main .registracion .menu .accordion .accordion-item .accordion-header .accordion-button {
+  font-weight: bolder;
+  letter-spacing: 3px;
 }
-html body main .menu-principal #menu-egreso {
-  background-image: url(./../../assets/imagenes/gastos.jpg);
-  background-size: contain;
+main .registracion .menu .accordion .accordion-item .accordion-collapse .accordion-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .accordion-body div {
+  display: flex;
+  flex-direction: column;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .accordion-body div .contenedor-registro-informacion {
+  text-align: center;
+  font-weight: bolder;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .accordion-body div .contenedor-registro-informacion input {
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: black;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse div {
+  display: flex;
+  justify-content: center;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse div button {
+  width: 50%;
+  font-weight: bolder;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados {
+  flex-direction: column;
+  font-weight: bolder;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados .lineaFija {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados .lineaFija div {
+  width: 100%;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados .lineaFija div span {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  color: black;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosSalario {
+  flex-direction: column;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosSalario .lineaResultado {
+  justify-content: space-evenly;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosSalario .lineaResultado span {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: black;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosInversiones {
+  flex-direction: column;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosInversiones .lineaResultado {
+  justify-content: space-evenly;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosInversiones .lineaResultado span {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: black;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosEmprendimientos {
+  flex-direction: column;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosEmprendimientos .lineaResultado {
+  justify-content: space-evenly;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosEmprendimientos .lineaResultado span {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: black;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosFactura {
+  flex-direction: column;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosFactura .lineaResultado {
+  justify-content: space-evenly;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosFactura .lineaResultado span {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: black;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosCreditos {
+  flex-direction: column;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosCreditos .lineaResultado {
+  justify-content: space-evenly;
+}
+main .registracion .menu .accordion .accordion-item .accordion-collapse .resultados #datosCargadosCreditos .lineaResultado span {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: black;
+}
+main .registrados {
+  grid-area: registrados;
+  display: flex;
+  flex-direction: column;
+}
+main .registrados .ingresos, main .registrados .egresos {
+  font-family: "finanzas";
+  margin-right: 5%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  margin-top: 2%;
+  border: 4px inset gray;
+  border-radius: 15px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+main .registrados .ingresos .movimiento, main .registrados .egresos .movimiento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  backdrop-filter: blur(5px);
+  border-bottom: 4px inset gray;
+}
+main .registrados .ingresos .movimiento span, main .registrados .egresos .movimiento span {
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 4px;
+  color: whitesmoke;
+  text-align: center;
+  width: 100%;
+}
+main .registrados .ingresos .total, main .registrados .egresos .total {
+  height: auto;
+  background-color: whitesmoke;
+}
+main .registrados .ingresos .total div, main .registrados .egresos .total div {
+  color: black;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  height: 100%;
+}
+main .registrados .ingresos .boton, main .registrados .egresos .boton {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  background-color: whitesmoke;
+}
+main .registrados .ingresos .boton .boton-guardar, main .registrados .egresos .boton .boton-guardar {
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 4px;
+  color: black;
+  border-radius: 15px;
+  height: 50%;
+  width: 80%;
+  box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.75);
+}
+
+.main-registrados {
+  display: flex;
+  flex-direction: row;
+}
+.main-registrados .seccion-registrados {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.main-registrados .seccion-registrados .contenenedor1 {
+  background-color: whitesmoke;
+  margin: 2%;
+  border: 4px outset white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 0px 12px 0px rgb(255, 255, 255);
+}
+.main-registrados .seccion-registrados .contenenedor1 h2 {
+  text-align: center;
+  height: auto;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  color: gray;
+  margin: 2%;
+}
+.main-registrados .seccion-registrados .contenenedor1 .datos-registrados {
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 2%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 5px;
+}
+.main-registrados .seccion-registrados .contenenedor1 .datos-registrados h3 {
+  height: 35px;
+  position: relative;
+  left: 10px;
+  letter-spacing: 2px;
+}
+.main-registrados .seccion-registrados .contenenedor1 .datos-registrados .linea-datos-fijos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.main-registrados .seccion-registrados .contenenedor1 .datos-registrados .linea-datos-fijos div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main-registrados .seccion-registrados .contenenedor1 .datos-registrados .linea-datos-fijos div span {
+  margin: 2%;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.main-registrados .seccion-registrados .contenenedor1 .datos-registrados .transacciones {
+  display: flex;
+  flex-direction: column;
+}
+.main-registrados .seccion-registrados .contenenedor1 .datos-registrados .transacciones .linea-registrada {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.main-registrados .seccion-registrados .contenenedor1 .datos-registrados .transacciones .linea-registrada span {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.main-registrados .seccion-boton {
+  width: 30%;
+  margin: 2%;
+}
+.main-registrados .seccion-boton div {
+  width: 100%;
+}
+.main-registrados .seccion-boton div #btn-reiniciar {
+  width: 100%;
+  border-radius: 15px;
+  font-family: "finanzas";
+  font-weight: bolder;
+  font-size: 20px;
+  margin: 4%;
+  height: 40px;
+  box-shadow: 0px 0px 12px 0px rgb(255, 255, 255);
 }
 
 * {
@@ -277,7 +350,16 @@ html body main .menu-principal #menu-egreso {
 
 @font-face {
   font-family: "finanzas";
-  src: url(../../assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+  src: url(../../assets/fonts/Gruppo/Gruppo-Regular.ttf);
+}
+html {
+  font-family: "finanzas";
+}
+html body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-image: url(./../../assets/imagenes/fondo-textura.jpg);
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -13,6 +13,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            box-shadow: 0px 0px 12px 0px rgba(255,255,255,1);
             h2 {
                 text-align: center;
                 height: auto;
@@ -34,6 +35,7 @@
                     height: 35px;
                     position: relative;
                     left: 10px;
+                    letter-spacing: 2px;
                 }
                 .linea-datos-fijos {
                     display: flex;
@@ -45,6 +47,8 @@
                         justify-content: center;
                         span {
                             margin: 2%;
+                            font-weight: bolder;
+                            letter-spacing: 1px;
                         }
                     }
                 }
@@ -59,6 +63,8 @@
                         span {
                             width: 100%;
                             text-align: center;
+                            font-weight: 500;
+                            letter-spacing: 1px;
                         }
                     }
                 } 
@@ -78,6 +84,7 @@
                 font-size: 20px;
                 margin: 4%;
                 height: 40px;
+                box-shadow: 0px 0px 12px 0px rgba(255,255,255,1);
             }
         }
     }
