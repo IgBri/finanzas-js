@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--css-->
+    <link rel="stylesheet" href="./../css/main.css">
+    <!--js-->
+    <script defer src="./../js/registrados.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><span>IB Finance</span></h1>
+        </div>
+        <div class="enlaces">
+            <div>
+                <a href="./../index.html">Registrar movimientos</a>
+            </div>
+            <div>
+                <a href="">Ver registros guardados</a>
+            </div>
+        </div>
+    </header>
+    <main class="main-registrados">
+        <section class="seccion-registrados">
+            <div class="contenenedor1">
+                <h2>Ingresos registrados</h2>
+                <div class="datos-registrados">
+                    <h3>Salarios</h3>
+                    <div class="linea-datos-fijos">
+                        <div>
+                            <span>Monto</span>
+                        </div>
+                        <div>
+                            <span>Moneda</span>
+                        </div>
+                        <div>
+                            <span>Mes liquidado</span>
+                        </div>
+                    </div>
+                    <div id="salariosIngresados" class="transacciones"></div>
+                </div>
+                <div class="datos-registrados">
+                    <h3>Inversiones</h3>
+                    <div class="linea-datos-fijos">
+                        <div>
+                            <span>Capital invertido</span>
+                        </div>
+                        <div>
+                            <span>Moneda</span>
+                        </div>
+                        <div>
+                            <span>Porcentaje de variacion</span>
+                        </div>
+                        <div>
+                            <span>Resultado neto</span>
+                        </div>
+                    </div>
+                    <div id="inversionesIngresadas" class="transacciones"></div>
+                </div>
+                <div class="datos-registrados">
+                    <h3>Emprendimientos</h3>
+                    <div class="linea-datos-fijos">
+                        <div>
+                            <span>Rubro</span>
+                        </div>
+                        <div>
+                            <span>Balance mensual</span>
+                        </div>
+                        <div>
+                            <span>Moneda</span>
+                        </div>
+                    </div>
+                    <div id="emprendimientosIngresados" class="transacciones"></div>
+                </div>
+            </div>
+            <div class="contenenedor1">
+                <h2>Egresos registrados</h2>
+                <div class="datos-registrados">
+                    <h3>Facturas</h3>
+                    <div class="linea-datos-fijos">
+                        <div>
+                            <span>Servicio</span>
+                        </div>
+                        <div>
+                            <span>Monto</span>
+                        </div>
+                        <div>
+                            <span>Vencimiento</span>
+                        </div>
+                    </div>
+                    <div id="facturasIngresadas" class="transacciones"></div>
+                </div>
+                <div class="datos-registrados">
+                    <h3>Deudas crediticias</h3>
+                    <div class="linea-datos-fijos">
+                        <div>
+                            <span>Monto</span>
+                        </div>
+                        <div>
+                            <span>Acreedor</span>
+                        </div>
+                        <div>
+                            <span>Vencimiento</span>
+                        </div>
+                    </div>
+                    <div id="deudasIngresadas" class="transacciones"></div>
+                </div>
+            </div>
+        </section>
+        <section class="seccion-boton">
+            <div>
+                <button id="btn-reiniciar">
+                    Reiniciar registros
+                </button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,4 +1,3 @@
-alert("Bienvenido al proyecto de Ignacio Brizuela")
 //Arrays
 //Arrays de ingresos
 const salarios = []

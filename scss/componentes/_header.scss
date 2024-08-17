@@ -1,0 +1,45 @@
+body {
+    header {
+        border-bottom: 4px outset rgb(255, 255, 255);
+        background-color: rgb(0, 0, 120);
+        .logo {
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            h1 {
+                margin: 2%;
+                display: flex;
+                height: 50px;
+                span {
+                    color: beige;
+                    border: 4px inset rgb(71, 71, 223);
+                    border-radius: 15px;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    height: auto;
+                    font-family: "finanzas";
+                    font-weight: 800;
+                    font-size: 30px;
+                    letter-spacing: 4px;
+                }
+            }
+        }
+        .enlaces {
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            div {
+                a {
+                    font-family: "finanzas";
+                    font-weight: bolder;
+                    font-size: 18px;
+                    color: black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}
